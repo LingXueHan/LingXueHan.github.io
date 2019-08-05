@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-博客加看板娘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/06/博客加看板娘/">博客添加看板娘</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/06/博客加看板娘/" class="archive-article-date">
+  	<time datetime="2019-08-05T16:46:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>首先检查博客主目录下面的  package.json里是否有<br>“hexo-helper-live2d”: “^3.0.3”,依赖，有的话可以先卸载<br>使用命令：npm uninstall hexo-helper-live2d<br>之后再安装：npm install –save hexo-helper-live2d<br>注意：命令都是在你的博客主目录执行</p>
+</li>
+<li><p>安装完成之后在package.json会看到安装的model  “hexo-helper-live2d”: “^……”,</p>
+</li>
+<li><p>此时再去 node_moduels目录下，可以看到有如下文件夹，这些都是动画主配置<br>live2d-widget</p>
+</li>
+</ol>
+<p>4.下载各种动画model;    下载好之后将packages里的所有动画模板拷贝到博客的node_modules目录里<br>出现：live2d-widget-model-……</p>
+<ol start="5">
+<li><p>配置博客站点配置文件，_config.yml<br>live2d:<br>enable: true<br>scriptFrom: local<br>pluginRootPath: live2dw/<br>pluginJsPath: lib/<br>pluginModelPath: assets/<br>tagMode: false<br>debug: false<br>model:<br> use: live2d-widget-model-wanko    #模板目录，在node_modules里<br>display:<br> position: right<br> width: 150<br> height: 300<br>mobile:<br> show: true    #是否在手机显示<br>react:<br> opacity: 0.7</p>
+</li>
+<li><p>开始部署<br>当使用hexo clean或者 hexo g命令的时候，这时候就可以看到如下日志了<br>INFO HEXO-HELPER-LIVE2D: Loaded model from npm-module(1),<br><a href="mailto:live2d-widget-model-epsilon2_1@1.0.5" target="_blank" rel="noopener">live2d-widget-model-epsilon2_1@1.0.5</a> from ‘D:\github\blog\node_modules<br>live2d-widget-model-epsilon2_1\assets’<br>说明已经加载到了配置的动画模板，到此就完成了。</p>
+</li>
+<li><p>这是因为站点配置文件没有使用utf-8编码造成的，所以在站点配置文件_config.yml<br>中写中文网站名，然后把站点配置文件保存为utf-8格式。</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/06/博客加看板娘/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-PyCharm破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
