@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>kali安装Google输入法 | Holo的纽希拉温泉旅店</title>
+  <title>搭建SSR 以及BBR加速 | Holo的纽希拉温泉旅店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kali 2019.4 安装Google输入法">
+  <meta name="description" content="centos 6 脚本搭建Shadowsocks SSR和BBR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="kali安装Google输入法">
-<meta property="og:url" content="http://yoursite.com/2019/12/26/kali安装Google输入法/index.html">
+<meta property="og:title" content="搭建SSR 以及BBR加速">
+<meta property="og:url" content="http://yoursite.com/2020/03/06/搭建SSR/index.html">
 <meta property="og:site_name" content="Holo的纽希拉温泉旅店">
-<meta property="og:description" content="kali 2019.4 安装Google输入法">
+<meta property="og:description" content="centos 6 脚本搭建Shadowsocks SSR和BBR">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-26T13:00:57.216Z">
+<meta property="og:updated_time" content="2020-03-06T07:52:37.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kali安装Google输入法">
-<meta name="twitter:description" content="kali 2019.4 安装Google输入法">
+<meta name="twitter:title" content="搭建SSR 以及BBR加速">
+<meta name="twitter:description" content="centos 6 脚本搭建Shadowsocks SSR和BBR">
   
     <link rel="alternative" href="/atom.xml" title="Holo的纽希拉温泉旅店" type="application/atom+xml">
   
@@ -154,31 +154,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-kali安装Google输入法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-搭建SSR" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      kali安装Google输入法
+      搭建SSR 以及BBR加速
     </h1>
   
 
         
-        <a href="/2019/12/26/kali安装Google输入法/" class="archive-article-date">
-  	<time datetime="2019-12-26T12:50:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+        <a href="/2020/03/06/搭建SSR/" class="archive-article-date">
+  	<time datetime="2020-03-06T07:44:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>kali 2019.4 安装Google输入法</p>
+        <p>centos 6 脚本搭建Shadowsocks SSR和BBR</p>
 <a id="more"></a>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=35090883&auto=1&height=66"></iframe>
+1：一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；
+2：支持以多次运行来安装多个版本，且各个版本可以共存（注意端口号需设成不同）；
+3：若已安装多个版本，则卸载时也需多次运行（每次卸载一种）；
 
-<p>1.安装fcitx<br>    apt-get install fcitx<br>2.安装Google拼音<br>    apt-get install fcitx-googlepinyin<br>3.重启系统<br>    reboot</p>
+<p>1 使用root用户登录，运行以下命令：<br>wget –no-check-certificate -O shadowsocks-all.sh <a href="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</a><br>chmod +x shadowsocks-all.sh<br>./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</p>
+<p>2 客户端下载</p>
+<p>常规版 Windows 客户端<br><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+<p>ShadowsocksR 版 Windows 客户端<br><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p>
+<p>3 卸载方法</p>
+<p>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）</p>
+<p>使用root用户登录，运行以下命令：</p>
+<p>./shadowsocks-all.sh uninstall</p>
+<p>启动脚本</p>
+<p>启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。</p>
+<p>Shadowsocks-Python 版：<br>/etc/init.d/shadowsocks-python start | stop | restart | status</p>
+<p>ShadowsocksR 版：<br>/etc/init.d/shadowsocks-r start | stop | restart | status</p>
+<p>Shadowsocks-Go 版：<br>/etc/init.d/shadowsocks-go start | stop | restart | status</p>
+<p>Shadowsocks-libev 版：<br>/etc/init.d/shadowsocks-libev start | stop | restart | status<br>各版本默认配置文件</p>
+<p>Shadowsocks-Python 版：<br>/etc/shadowsocks-python/config.json</p>
+<p>ShadowsocksR 版：    已不可用<br>/etc/shadowsocks-r/config.json</p>
+<p>Shadowsocks-Go 版： 已不可用<br>/etc/shadowsocks-go/config.json</p>
+<p>Shadowsocks-libev 版：<br>/etc/shadowsocks-libev/config.json</p>
+<p>脚本一键安装 BBR 加速</p>
+<p>使用root用户登录服务器，执行以下命令：<br>wget –no-check-certificate <a href="https://github.com/teddysun/across/raw/master/bbr.sh" target="_blank" rel="noopener">https://github.com/teddysun/across/raw/master/bbr.sh</a> &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</p>
+<p>重新连接服务器，验证是否成功安装最新内核并开启 BBR 加速，执行命令：</p>
+<p>uname -r</p>
+<p>内核版本显示为最新版就表示 BBR 加速安装完成了</p>
 
       
 
@@ -258,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/26/kali安装Google输入法/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/06/搭建SSR/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +297,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/06/搭建SSR/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          搭建SSR 以及BBR加速
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/06/kali安装steam/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">kali安装steam</div>
+    <a href="/2019/12/26/kali安装Google输入法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">kali安装Google输入法</div>
       <i class="icon-circle-right"></i>
     </a>
   
