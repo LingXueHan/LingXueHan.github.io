@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>博客添加看板娘 | Holo的纽希拉温泉旅店</title>
+  <title>win10VM问题 | Holo的纽希拉温泉旅店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="博客添加看板娘具体方法：">
+  <meta name="description" content="Win10安装VM虚拟机不兼容问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客添加看板娘">
-<meta property="og:url" content="http://yoursite.com/2019/08/06/博客加看板娘/index.html">
+<meta property="og:title" content="win10VM问题">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/win10VM问题/index.html">
 <meta property="og:site_name" content="Holo的纽希拉温泉旅店">
-<meta property="og:description" content="博客添加看板娘具体方法：">
+<meta property="og:description" content="Win10安装VM虚拟机不兼容问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-07T17:04:23.074Z">
+<meta property="og:updated_time" content="2020-03-07T17:04:29.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客添加看板娘">
-<meta name="twitter:description" content="博客添加看板娘具体方法：">
+<meta name="twitter:title" content="win10VM问题">
+<meta name="twitter:description" content="Win10安装VM虚拟机不兼容问题">
   
     <link rel="alternative" href="/atom.xml" title="Holo的纽希拉温泉旅店" type="application/atom+xml">
   
@@ -154,47 +154,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-博客加看板娘" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-win10VM问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      博客添加看板娘
+      win10VM问题
     </h1>
   
 
         
-        <a href="/2019/08/06/博客加看板娘/" class="archive-article-date">
-  	<time datetime="2019-08-05T16:46:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
+        <a href="/2020/03/07/win10VM问题/" class="archive-article-date">
+  	<time datetime="2020-03-07T13:32:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>博客添加看板娘具体方法：</p>
+        <p>Win10安装VM虚拟机不兼容问题</p>
 <a id="more"></a>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="52" src="//music.163.com/outchain/player?type=2&id=1399097836&auto=1&height=32"></iframe>
 
-<ol>
-<li><p>首先检查博客主目录下面的  package.json里是否有<br>“hexo-helper-live2d”: “^3.0.3”,依赖，有的话可以先卸载<br>使用命令：npm uninstall hexo-helper-live2d<br>之后再安装：npm install –save hexo-helper-live2d<br>注意：命令都是在你的博客主目录执行</p>
-</li>
-<li><p>安装完成之后在package.json会看到安装的model  “hexo-helper-live2d”: “^……”,</p>
-</li>
-<li><p>此时再去 node_moduels目录下，可以看到有如下文件夹，这些都是动画主配置<br>live2d-widget</p>
-</li>
-</ol>
-<p>4.下载各种动画model;    下载好之后将packages里的所有动画模板拷贝到博客的node_modules目录里<br>出现：live2d-widget-model-……</p>
-<ol start="5">
-<li><p>配置博客站点配置文件，_config.yml<br>live2d:<br>enable: true<br>scriptFrom: local<br>pluginRootPath: live2dw/<br>pluginJsPath: lib/<br>pluginModelPath: assets/<br>tagMode: false<br>debug: false<br>model:<br> use: live2d-widget-model-wanko    #模板目录，在node_modules里<br>display:<br> position: right<br> width: 150<br> height: 300<br>mobile:<br> show: true    #是否在手机显示<br>react:<br> opacity: 0.7</p>
-</li>
-<li><p>开始部署<br>当使用hexo clean或者 hexo g命令的时候，这时候就可以看到如下日志了<br>INFO HEXO-HELPER-LIVE2D: Loaded model from npm-module(1),<br><a href="mailto:live2d-widget-model-epsilon2_1@1.0.5" target="_blank" rel="noopener">live2d-widget-model-epsilon2_1@1.0.5</a> from ‘D:\github\blog\node_modules<br>live2d-widget-model-epsilon2_1\assets’<br>说明已经加载到了配置的动画模板，到此就完成了。</p>
-</li>
-<li><p>这是因为站点配置文件没有使用utf-8编码造成的，所以在站点配置文件_config.yml<br>中写中文网站名，然后把站点配置文件保存为utf-8格式。</p>
-</li>
-</ol>
+<p>原因：升级windows 10 1903后 增加了沙盒功能,打开沙盒功能后,发现VMware workstation 打不开, 提示<br>VMware Workstation 与 Device/Credential Guard 不兼容, virtualbox 打不开, 安卓模拟器打开电脑蓝屏.</p>
+<p>解决：管理员运行cmd或者powershell, 执行 bcdedit /set hypervisorlaunchtype off,重启即可</p>
 
       
 
@@ -274,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/06/博客加看板娘/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/07/win10VM问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,18 +273,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/06/kali安装steam/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          kali安装steam
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/05/PyCharm破解/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PyCharm破解</div>
+    <a href="/2020/03/06/Hexo的常见命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo的常见命令</div>
       <i class="icon-circle-right"></i>
     </a>
   
